@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="ClassAid.StartPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="50">
+                <!--TODO: Fix Image-->
+                <Image x:Name="imgBanner" 
+                       Margin="50"
+                       Source="classaid_logo.png" 
+                       HeightRequest="200" 
+                       WidthRequest="200"></Image>
+                <!--TODO: Redesign Buttons and labels-->
+                <Label HorizontalOptions="CenterAndExpand">Are you a class representative?</Label>
+                <Button x:Name="adminBtn" 
+                        Clicked="adminBtn_Clicked"
+                        Text="Continue as an Admin"/>
+                <Label HorizontalOptions="CenterAndExpand">Are you a genarel student?</Label>
+                <Button x:Name="studentBtn" 
+                        Clicked="studentBtn_Clicked"
+                        Text="Continue as a Student"/>                
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                         Margin="20"
+                         HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="CenterAndExpand">
+                <Button x:Name="bypassBtn" 
+                        HorizontalOptions="Center"
+                        Clicked="bypassBtn_Clicked"
+                        Text="Bypass Btn"/>
+                <Label x:Name="swapText">Read about our privacy policy.</Label>
+                <BoxView Color="Teal"
+                         WidthRequest="200">
+                    <BoxView.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" 
+                                                Swiped="SwipeGestureRecognizer_Swiped"/>
+                        <SwipeGestureRecognizer Direction="Right"
+                                                Swiped="SwipeGestureRecognizer_Swiped_1"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
